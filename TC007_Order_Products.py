@@ -9,6 +9,7 @@ class Blog_ATS(unittest.TestCase):
        #set the chrome webdriver
        self.driver = webdriver.Chrome()
 
+
    def test_blog(self):
 
        driver = self.driver
@@ -48,8 +49,24 @@ class Blog_ATS(unittest.TestCase):
        time.sleep(2)
 
        #clicks place order button
-       elem = driver.find_element_by_xpath("/html/body/div[3]/form/p[7]/input").click()
+       driver.find_element_by_xpath("/html/body/div[3]/form/p[7]/input").click()
        time.sleep(2)
+
+       # #Now navigates to the payment page
+       # driver.find_element_by_xpath("/html/body/div[3]/form/input[12]").click()
+       # time.sleep(5)
+       # # driver.get("https://www.sandbox.paypal.com/webapps/hermes?token=52J0159569199244W&useraction=commit&mfid=1512584164797_2257380642f8c#/checkout/login")
+       # #Give the paypal credentials
+       # paypal ="isdfall2017team1-buyer@gmail.com"
+       # paypalPwd = "isdTeam1"
+       # elem = driver.find_element_by_id('email')
+       # elem.send_keys(paypal)
+       # elem = driver.find_element_by_id('password')
+       # elem.send_keys(paypalPwd)
+       #
+       # #Click on Login button
+       # driver.find_element_by_id("btnLogin").click()
+       # time.sleep(3)
 
    def tearDown(self):
        self.driver.close()
